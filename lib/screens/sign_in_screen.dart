@@ -107,7 +107,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 controller: emailController,
                                 keyboardType: TextInputType.emailAddress,
                                 decoration: InputDecoration(
-                                  fillColor: kWhiteColor,
+                                  fillColor: kSecondarySwatchColor.shade200,
                                   hintText: 'john@email.com',
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
@@ -167,7 +167,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 },
                                 controller: passwordController,
                                 decoration: InputDecoration(
-                                  fillColor: kWhiteColor,
+                                  fillColor: kSecondarySwatchColor.shade200,
                                   hintText: '*******************',
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),

@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter_educational_app_ui/theme/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -7,14 +5,14 @@ class ThemeStyle {
   static ThemeData lightTheme = ThemeData(
     appBarTheme: AppBarTheme(
       backgroundColor: kPrimarySwatchColor,
-      iconTheme: IconThemeData(color: kWhiteColor),
-      foregroundColor: kWhiteColor,
-      surfaceTintColor: kWhiteColor,
+      iconTheme: IconThemeData(color: kPrimarySwatchColor),
+      foregroundColor: kPrimarySwatchColor,
+      surfaceTintColor: kPrimarySwatchColor,
     ),
     filledButtonTheme: FilledButtonThemeData(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
-        foregroundColor: MaterialStateProperty.all(kWhiteColor),
+        foregroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -30,7 +28,7 @@ class ThemeStyle {
     ),
     actionIconTheme: ActionIconThemeData(
       endDrawerButtonIconBuilder: (context) {
-        return Icon(Icons.menu, color: kBlackColor);
+        return Icon(Icons.menu, color: kPrimarySwatchColor);
       },
     ),
     iconButtonTheme: IconButtonThemeData(
@@ -50,12 +48,12 @@ class ThemeStyle {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
-        foregroundColor: MaterialStateProperty.all(kWhiteColor),
+        foregroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kWhiteColor),
+        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
         foregroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
         side: MaterialStateProperty.all<BorderSide>(
           BorderSide(color: kPrimarySwatchColor),
@@ -68,7 +66,7 @@ class ThemeStyle {
       ),
     ),
     datePickerTheme: DatePickerThemeData(
-      backgroundColor: kWhiteColor,
+      backgroundColor: kSecondarySwatchColor.shade200,
       todayBackgroundColor: MaterialStatePropertyAll(kPrimarySwatchColor),
       confirmButtonStyle: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
@@ -80,7 +78,7 @@ class ThemeStyle {
           if (states.contains(MaterialState.selected)) {
             return kPrimarySwatchColor;
           }
-          return kGreyColor;
+          return kPrimarySwatchColor;
         },
       ),
     ),
@@ -97,34 +95,30 @@ class ThemeStyle {
           if (states.contains(MaterialState.selected)) {
             return kPrimarySwatchColor;
           }
-          return kGreyColor;
+          return kPrimarySwatchColor;
         },
       ),
     ),
-    scaffoldBackgroundColor: kWhiteColor,
+    scaffoldBackgroundColor: kSecondarySwatchColor.shade200,  // Set the app's background color
     primarySwatch: kPrimarySwatchColor,
-    dialogBackgroundColor: kWhiteColor,
-    bottomSheetTheme: BottomSheetThemeData(backgroundColor: kWhiteColor),
+    dialogBackgroundColor: kSecondarySwatchColor.shade200,
+    bottomSheetTheme: BottomSheetThemeData(backgroundColor: kSecondarySwatchColor.shade200),
     textTheme: TextTheme(
-      displayLarge: TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
-      displayMedium:
-          TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
-      displaySmall: TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
-      headlineLarge:
-          TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
-      headlineMedium:
-          TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
-      headlineSmall:
-          TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
-      titleLarge: TextStyle(fontFamily: 'Epilogue-Bold', color: kWhiteColor),
-      titleMedium: TextStyle(fontFamily: 'Epilogue-Bold', color: kWhiteColor),
-      titleSmall: TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
-      bodyLarge: TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
-      bodyMedium: TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
-      bodySmall: TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
-      labelLarge: TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
-      labelMedium: TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
-      labelSmall: TextStyle(fontFamily: 'Epilogue-Black', color: kWhiteColor),
+      displayLarge: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
+      displayMedium: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
+      displaySmall: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
+      headlineLarge: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
+      headlineMedium: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
+      headlineSmall: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
+      titleLarge: TextStyle(fontFamily: 'Epilogue-Bold', color: kPrimarySwatchColor),
+      titleMedium: TextStyle(fontFamily: 'Epilogue-Bold', color: kPrimarySwatchColor),
+      titleSmall: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
+      bodyLarge: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
+      bodyMedium: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
+      bodySmall: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
+      labelLarge: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
+      labelMedium: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
+      labelSmall: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
     ),
   );
 }

@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-const Color kPrimaryColor = Color(0xFF4C1DBE);
+const Color kPrimaryColor = Color(0xFF084020);
 MaterialColor kPrimarySwatchColor = MaterialColor(
   kPrimaryColor.value,
   const <int, Color>{
-    50: Color(0xffeee9fc),
-    100: Color(0xffcdbdf5),
-    200: Color(0xffac90ee),
-    300: Color(0xff8a64e7),
-    400: Color(0xFF6938e1),
+    50: Color(0xff84a090),
+    100: Color(0xff6b8c79),
+    200: Color(0xff527963),
+    300: Color(0xff39664d),
+    400: Color(0xFF215336),
     500: kPrimaryColor,
-    600: Color(0xff501ec7),
-    700: Color(0xff3e189b),
-    800: Color(0xff1b0a42),
-    900: Color(0xff090316),
-    1000: Color(0xFF090316),
+    600: Color(0xff073a1d),
+    700: Color(0xff06331a),
+    800: Color(0xff062d16),
+    900: Color(0xff052613),
+    1000: Color(0xFF042010),
   },
 );
 

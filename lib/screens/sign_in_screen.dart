@@ -45,39 +45,17 @@ class _SignInScreenState extends State<SignInScreen> {
           body: SingleChildScrollView(
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             physics: const ClampingScrollPhysics(),
-            child: Column(
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 16.0,
-                    horizontal: 16.0,
-                  ),
-                  child: Hero(
+            child: Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: Column(
+                children: [
+                  Hero(
                     tag: 'logo',
                     child: Image.asset(
                       'assets/images/logo-square.png',
                     ),
                   ),
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.7,
-                  padding: const EdgeInsets.only(
-                    top: 46.0,
-                    left: 32.0,
-                    right: 32.0,
-                  ),
-                  decoration: BoxDecoration(
-                    color: kLightGreyColor,
-                    border: Border.all(
-                      color: kDarkGreyColor,
-                    ),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(50),
-                      topRight: Radius.circular(50),
-                    ),
-                  ),
-                  child: SingleChildScrollView(
+                  SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -85,7 +63,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           'Login With Your Account',
                           style: Theme.of(context)
                               .textTheme
-                              .headlineLarge!
+                              .headlineMedium!
                               .copyWith(
                                 color: kBlackColor,
                                 fontWeight: FontWeight.bold,
@@ -111,7 +89,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             const SizedBox(height: 8),
                             Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(10),
                                 border: Border.all(
                                   color: kTextColor,
                                 ),
@@ -129,10 +107,10 @@ class _SignInScreenState extends State<SignInScreen> {
                                 controller: emailController,
                                 keyboardType: TextInputType.emailAddress,
                                 decoration: InputDecoration(
-                                  fillColor: kLightDarkGreyColor,
-                                  hintText: 'someone@example.com',
+                                  fillColor: kWhiteColor,
+                                  hintText: 'john@email.com',
                                   border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide.none,
                                   ),
                                   filled: true,
@@ -172,7 +150,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             const SizedBox(height: 8),
                             Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(10),
                                 border: Border.all(
                                   color: kTextColor,
                                 ),
@@ -189,10 +167,10 @@ class _SignInScreenState extends State<SignInScreen> {
                                 },
                                 controller: passwordController,
                                 decoration: InputDecoration(
-                                  fillColor: kLightDarkGreyColor,
-                                  hintText: 'Type here',
+                                  fillColor: kWhiteColor,
+                                  hintText: '*******************',
                                   border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide.none,
                                   ),
                                   filled: true,
@@ -253,11 +231,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               child: ElevatedButton(
                                 onPressed: () {
                                 },
-                                style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                ),
+                              
                                 child: Text(
                                   'Log In',
                                   style: Theme.of(context)
@@ -335,8 +309,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       ],
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

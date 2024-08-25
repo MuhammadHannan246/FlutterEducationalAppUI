@@ -47,426 +47,392 @@ class _SignUpScreenState extends State<SignUpScreen> {
         },
         child: Scaffold(
           resizeToAvoidBottomInset: true,
-          body: SingleChildScrollView(
-            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-            physics: const ClampingScrollPhysics(),
-            child: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 16.0, horizontal: 16.0),
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  child: Hero(
-                    tag: 'logo',
-                    child: Image.asset(
-                      'assets/images/logo-square.png',
+          body: SafeArea(
+            child: SingleChildScrollView(
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+              physics: const ClampingScrollPhysics(),
+              child: Padding(
+                padding: const EdgeInsets.all(32.0),
+                child: Column(
+                  children: [
+                    Hero(
+                      tag: 'logo',
+                      child: Image.asset(
+                        'assets/images/logo-square.png',
+                      ),
                     ),
-                  ),
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.7,
-                  padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                  decoration: BoxDecoration(
-                    color: kLightGreyColor,
-                    border: Border.all(
-                      color: kDarkGreyColor,
-                    ),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(50),
-                      topRight: Radius.circular(50),
-                    ),
-                  ),
-                  child: SingleChildScrollView(
-                    physics: const ClampingScrollPhysics(),
-                    keyboardDismissBehavior:
-                        ScrollViewKeyboardDismissBehavior.onDrag,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 32.0),
-                          child: Align(
-                            alignment: Alignment.topLeft,
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: SvgPicture.asset(
-                                'assets/images/left-chevron.svg',
-                                height: 20,
-                              ),
+                    SingleChildScrollView(
+                      physics: const ClampingScrollPhysics(),
+                      keyboardDismissBehavior:
+                          ScrollViewKeyboardDismissBehavior.onDrag,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 16.0),
+                            child: Text(
+                              'Create A New Account',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headlineLarge!
+                                  .copyWith(
+                                    color: kBlackColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16.0),
-                          child: Text(
-                            'Create A New Account',
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineLarge!
-                                .copyWith(
-                                  color: kBlackColor,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
-                        ),
-                        Form(
-                          key: formKey,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Full Name',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(
-                                      color: kBlackColor,
-                                    ),
-                              ),
-                              const SizedBox(height: 8),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: Border.all(
-                                    color: kTextColor,
-                                  ),
-                                ),
-                                child: TextFormField(
-                                  validator: (value) {
-                                    if (value!.isEmpty) {
-                                      return 'Enter your full name';
-                                    }
-                                    return null;
-                                  },
-                                  controller: fullNameController,
-                                  decoration: InputDecoration(
-                                    fillColor: kLightDarkGreyColor,
-                                    hintText: 'Type Here',
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    filled: true,
-                                    floatingLabelStyle: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: kPrimarySwatchColor,
-                                        ),
-                                    hintStyle: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: kTextColor,
-                                        ),
-                                  ),
+                          Form(
+                            key: formKey,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Full Name',
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodySmall!
                                       .copyWith(
-                                        color: kBlackColor,
+                                        color: kPrimarySwatchColor,
                                       ),
                                 ),
-                              ),
-                              const SizedBox(height: 20),
-                              Text(
-                                'Email Address',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(
-                                      color: kBlackColor,
+                                const SizedBox(height: 8),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: kPrimarySwatchColor,
                                     ),
-                              ),
-                              const SizedBox(height: 8),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: Border.all(
-                                    color: kTextColor,
                                   ),
-                                ),
-                                child: TextFormField(
-                                  validator: (value) {
-                                    if (value!.isEmpty ||
-                                        !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}')
-                                            .hasMatch(value)) {
-                                      return 'Use the standard username format like example@mail.com';
-                                    }
-                                    return null;
-                                  },
-                                  controller: emailController,
-                                  keyboardType: TextInputType.emailAddress,
-                                  decoration: InputDecoration(
-                                    fillColor: kLightDarkGreyColor,
-                                    hintText: 'Type Here',
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    filled: true,
-                                    floatingLabelStyle: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: kPrimarySwatchColor,
-                                        ),
-                                    hintStyle: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: kTextColor,
-                                        ),
-                                  ),
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall!
-                                      .copyWith(
-                                        color: kBlackColor,
-                                      ),
-                                ),
-                              ),
-                              const SizedBox(height: 20),
-                              Text(
-                                'Contact Information',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(
-                                      color: kBlackColor,
-                                    ),
-                              ),
-                              const SizedBox(height: 8),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: Border.all(
-                                    color: kTextColor,
-                                  ),
-                                ),
-                                child: TextFormField(
-                                  validator: (value) {
-                                    if (value!.isEmpty ||
-                                        !RegExp(r'^[0-9]+$').hasMatch(value)) {
-                                      return 'Enter a valid contact number';
-                                    }
-                                    return null;
-                                  },
-                                  controller: contactInfoController,
-                                  keyboardType: TextInputType.phone,
-                                  decoration: InputDecoration(
-                                    fillColor: kLightDarkGreyColor,
-                                    hintText: 'Type Here',
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    filled: true,
-                                    floatingLabelStyle: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: kPrimarySwatchColor,
-                                        ),
-                                    hintStyle: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: kTextColor,
-                                        ),
-                                  ),
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall!
-                                      .copyWith(
-                                        color: kBlackColor,
-                                      ),
-                                ),
-                              ),
-                              const SizedBox(height: 20),
-                              Text(
-                                'Password',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(
-                                      color: kBlackColor,
-                                    ),
-                              ),
-                              const SizedBox(height: 8),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: Border.all(
-                                    color: kTextColor,
-                                  ),
-                                ),
-                                child: TextFormField(
-                                  validator: (value) {
-                                    if (value!.isEmpty) {
-                                      return 'Enter a password';
-                                    } else if (value.length < 6) {
-                                      return 'Password must be at least 6 characters';
-                                    }
-                                    return null;
-                                  },
-                                  controller: passwordController,
-                                  decoration: InputDecoration(
-                                    fillColor: kLightDarkGreyColor,
-                                    hintText: 'Type Here',
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    filled: true,
-                                    floatingLabelStyle: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: kPrimarySwatchColor,
-                                        ),
-                                    hintStyle: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: kTextColor,
-                                        ),
-                                  ),
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall!
-                                      .copyWith(
-                                        color: kBlackColor,
-                                      ),
-                                  obscureText: passwordObscure,
-                                  enableSuggestions: false,
-                                  autocorrect: false,
-                                ),
-                              ),
-                              const SizedBox(height: 20),
-                              Text(
-                                'Confirm Password',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(
-                                      color: kBlackColor,
-                                    ),
-                              ),
-                              const SizedBox(height: 8),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: Border.all(
-                                    color: kTextColor,
-                                  ),
-                                ),
-                                child: TextFormField(
-                                  validator: (value) {
-                                    if (value!.isEmpty) {
-                                      return 'Confirm your password';
-                                    } else if (value !=
-                                        passwordController.text) {
-                                      return 'Passwords do not match';
-                                    }
-                                    return null;
-                                  },
-                                  controller: confirmPasswordController,
-                                  decoration: InputDecoration(
-                                    fillColor: kLightDarkGreyColor,
-                                    hintText: 'Type Here',
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    filled: true,
-                                    floatingLabelStyle: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: kPrimarySwatchColor,
-                                        ),
-                                    hintStyle: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: kTextColor,
-                                        ),
-                                  ),
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall!
-                                      .copyWith(
-                                        color: kBlackColor,
-                                      ),
-                                  obscureText: passwordObscure,
-                                  enableSuggestions: false,
-                                  autocorrect: false,
-                                ),
-                              ),
-                              const SizedBox(height: 8),
-                              Row(
-                                children: [
-                                  Checkbox(
-                                    value: !passwordObscure,
-                                    onChanged: (bool? value) {
-                                      setState(
-                                        () {
-                                          passwordObscure = !value!;
-                                        },
-                                      );
+                                  child: TextFormField(
+                                    validator: (value) {
+                                      if (value!.isEmpty) {
+                                        return 'Enter your full name';
+                                      }
+                                      return null;
                                     },
-                                  ),
-                                  Text(
-                                    'Show Passwords',
+                                    controller: fullNameController,
+                                    decoration: InputDecoration(
+                                      fillColor: kSecondarySwatchColor.shade200,
+                                      hintText: 'Type Here',
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide.none,
+                                      ),
+                                      filled: true,
+                                      floatingLabelStyle: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall!
+                                          .copyWith(
+                                            color: kPrimarySwatchColor,
+                                          ),
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall!
+                                          .copyWith(
+                                            color: kTextColor,
+                                          ),
+                                    ),
                                     style: Theme.of(context)
                                         .textTheme
                                         .bodySmall!
                                         .copyWith(
-                                          color: kBlackColor,
+                                          color: kPrimarySwatchColor,
                                         ),
                                   ),
-                                ],
-                              ),
-                              const SizedBox(height: 20),
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 16.0),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: ElevatedButton(
-                                        onPressed: () {},
-                                        style: ElevatedButton.styleFrom(
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(15),
-                                          ),
-                                        ),
-                                        child: Text(
-                                          'Submit',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodySmall!
-                                              .copyWith(
-                                                color: kWhiteColor,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                        ),
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  'Email Address',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall!
+                                      .copyWith(
+                                        color: kPrimarySwatchColor,
                                       ),
+                                ),
+                                const SizedBox(height: 8),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: kPrimarySwatchColor,
+                                    ),
+                                  ),
+                                  child: TextFormField(
+                                    validator: (value) {
+                                      if (value!.isEmpty ||
+                                          !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}')
+                                              .hasMatch(value)) {
+                                        return 'Use the standard username format like example@mail.com';
+                                      }
+                                      return null;
+                                    },
+                                    controller: emailController,
+                                    keyboardType: TextInputType.emailAddress,
+                                    decoration: InputDecoration(
+                                      fillColor: kSecondarySwatchColor.shade200,
+                                      hintText: 'Type Here',
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide.none,
+                                      ),
+                                      filled: true,
+                                      floatingLabelStyle: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall!
+                                          .copyWith(
+                                            color: kPrimarySwatchColor,
+                                          ),
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall!
+                                          .copyWith(
+                                            color: kTextColor,
+                                          ),
+                                    ),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(
+                                          color: kPrimarySwatchColor,
+                                        ),
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  'Contact Information',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall!
+                                      .copyWith(
+                                        color: kPrimarySwatchColor,
+                                      ),
+                                ),
+                                const SizedBox(height: 8),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: kPrimarySwatchColor,
+                                    ),
+                                  ),
+                                  child: TextFormField(
+                                    validator: (value) {
+                                      if (value!.isEmpty ||
+                                          !RegExp(r'^[0-9]+$').hasMatch(value)) {
+                                        return 'Enter a valid contact number';
+                                      }
+                                      return null;
+                                    },
+                                    controller: contactInfoController,
+                                    keyboardType: TextInputType.phone,
+                                    decoration: InputDecoration(
+                                      fillColor: kSecondarySwatchColor.shade200,
+                                      hintText: 'Type Here',
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide.none,
+                                      ),
+                                      filled: true,
+                                      floatingLabelStyle: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall!
+                                          .copyWith(
+                                            color: kPrimarySwatchColor,
+                                          ),
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall!
+                                          .copyWith(
+                                            color: kTextColor,
+                                          ),
+                                    ),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(
+                                          color: kPrimarySwatchColor,
+                                        ),
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  'Password',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall!
+                                      .copyWith(
+                                        color: kPrimarySwatchColor,
+                                      ),
+                                ),
+                                const SizedBox(height: 8),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: kPrimarySwatchColor,
+                                    ),
+                                  ),
+                                  child: TextFormField(
+                                    validator: (value) {
+                                      if (value!.isEmpty) {
+                                        return 'Enter a password';
+                                      } else if (value.length < 6) {
+                                        return 'Password must be at least 6 characters';
+                                      }
+                                      return null;
+                                    },
+                                    controller: passwordController,
+                                    decoration: InputDecoration(
+                                      fillColor: kSecondarySwatchColor.shade200,
+                                      hintText: 'Type Here',
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide.none,
+                                      ),
+                                      filled: true,
+                                      floatingLabelStyle: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall!
+                                          .copyWith(
+                                            color: kPrimarySwatchColor,
+                                          ),
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall!
+                                          .copyWith(
+                                            color: kTextColor,
+                                          ),
+                                    ),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(
+                                          color: kPrimarySwatchColor,
+                                        ),
+                                    obscureText: passwordObscure,
+                                    enableSuggestions: false,
+                                    autocorrect: false,
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  'Confirm Password',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall!
+                                      .copyWith(
+                                        color: kPrimarySwatchColor,
+                                      ),
+                                ),
+                                const SizedBox(height: 8),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: kPrimarySwatchColor,
+                                    ),
+                                  ),
+                                  child: TextFormField(
+                                    validator: (value) {
+                                      if (value!.isEmpty) {
+                                        return 'Confirm your password';
+                                      } else if (value !=
+                                          passwordController.text) {
+                                        return 'Passwords do not match';
+                                      }
+                                      return null;
+                                    },
+                                    controller: confirmPasswordController,
+                                    decoration: InputDecoration(
+                                      fillColor: kSecondarySwatchColor.shade200,
+                                      hintText: 'Type Here',
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide.none,
+                                      ),
+                                      filled: true,
+                                      floatingLabelStyle: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall!
+                                          .copyWith(
+                                            color: kPrimarySwatchColor,
+                                          ),
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall!
+                                          .copyWith(
+                                            color: kTextColor,
+                                          ),
+                                    ),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(
+                                          color: kPrimarySwatchColor,
+                                        ),
+                                    obscureText: passwordObscure,
+                                    enableSuggestions: false,
+                                    autocorrect: false,
+                                  ),
+                                ),
+                                const SizedBox(height: 8),
+                                Row(
+                                  children: [
+                                    Checkbox(
+                                      value: !passwordObscure,
+                                      onChanged: (bool? value) {
+                                        setState(
+                                          () {
+                                            passwordObscure = !value!;
+                                          },
+                                        );
+                                      },
+                                    ),
+                                    Text(
+                                      'Show Passwords',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall!
+                                          .copyWith(
+                                            color: kBlackColor,
+                                          ),
                                     ),
                                   ],
                                 ),
-                              ),
-                            ],
+                                const SizedBox(height: 20),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 16.0),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: ElevatedButton(
+                                          onPressed: () {},
+                                       
+                                          child: Text(
+                                            'Submit',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall!
+                                                .copyWith(
+                                                  color: kWhiteColor,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ),

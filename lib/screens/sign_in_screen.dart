@@ -1,4 +1,5 @@
 
+import 'package:flutter_educational_app_ui/screens/forgot_password_screen.dart';
 import 'package:flutter_educational_app_ui/screens/sign_up_screen.dart';
 import 'package:flutter_educational_app_ui/theme/colors.dart';
 import 'package:flutter/material.dart';
@@ -248,6 +249,8 @@ class _SignInScreenState extends State<SignInScreen> {
                             Expanded(
                               child: MaterialButton(
                                 onPressed: () {
+                                  Navigator.of(context)
+                                      .pushNamed(ForgotPasswordScreen.routeName);
                                 },
                                 child: Text(
                                   'Forgot Password',

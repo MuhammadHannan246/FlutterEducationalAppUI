@@ -1,6 +1,5 @@
 import 'package:flutter_educational_app_ui/theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class SignUpScreen extends StatefulWidget {

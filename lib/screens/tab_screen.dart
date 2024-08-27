@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_educational_app_ui/screens/featured_screen.dart';
 import 'package:flutter_educational_app_ui/theme/colors.dart';
 
 class TabScreen extends StatefulWidget {
@@ -12,7 +13,7 @@ class TabScreen extends StatefulWidget {
 class _TabScreenState extends State<TabScreen> {
   int selectedIndex = 0;
   static const List<Widget> tabScreensOptions = <Widget>[
-    Text('Index 0: Home'),
+    FeaturedScreen(),
     Text('Index 1: Business'),
     Text('Index 2: School'),
     Text('Index 3: Settings'),

@@ -47,8 +47,8 @@ class ThemeStyle {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
-        foregroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
+        backgroundColor: MaterialStateProperty.all(kTextColor),
+        foregroundColor: MaterialStateProperty.all(kTextColor),
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
@@ -66,7 +66,7 @@ class ThemeStyle {
       ),
     ),
     datePickerTheme: DatePickerThemeData(
-      backgroundColor: kSecondarySwatchColor.shade200,
+      backgroundColor: kGreyWhiteColor,
       todayBackgroundColor: MaterialStatePropertyAll(kPrimarySwatchColor),
       confirmButtonStyle: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
@@ -76,16 +76,16 @@ class ThemeStyle {
       fillColor: MaterialStateColor.resolveWith(
         (Set<MaterialState> states) {
           if (states.contains(MaterialState.selected)) {
-            return kPrimarySwatchColor;
+            return kTextColor;
           }
-          return kPrimarySwatchColor;
+          return kTextColor;
         },
       ),
     ),
     checkboxTheme: CheckboxThemeData(
       side: MaterialStateBorderSide.resolveWith(
         (Set<MaterialState> states) {
-          return BorderSide(color: kPrimarySwatchColor);
+          return BorderSide(color: kTextColor);
         },
       ),
     ),
@@ -93,16 +93,16 @@ class ThemeStyle {
       trackColor: MaterialStateColor.resolveWith(
         (Set<MaterialState> states) {
           if (states.contains(MaterialState.selected)) {
-            return kPrimarySwatchColor;
+            return kTextColor;
           }
-          return kPrimarySwatchColor;
+          return kTextColor;
         },
       ),
     ),
-    scaffoldBackgroundColor: kSecondarySwatchColor.shade200,  // Set the app's background color
+    scaffoldBackgroundColor: kGreyWhiteColor,  // Set the app's background color
     primarySwatch: kPrimarySwatchColor,
-    dialogBackgroundColor: kSecondarySwatchColor.shade200,
-    bottomSheetTheme: BottomSheetThemeData(backgroundColor: kSecondarySwatchColor.shade200),
+    dialogBackgroundColor: kGreyWhiteColor,
+    bottomSheetTheme: BottomSheetThemeData(backgroundColor: kGreyWhiteColor),
     textTheme: TextTheme(
       displayLarge: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),
       displayMedium: TextStyle(fontFamily: 'Epilogue-Black', color: kPrimarySwatchColor),

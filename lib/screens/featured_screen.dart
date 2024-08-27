@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_educational_app_ui/theme/colors.dart';
+import 'package:flutter_educational_app_ui/widgets/app_bar_widget.dart';
 
 class FeaturedScreen extends StatefulWidget {
   static const routeName = '/featured-screen';
@@ -18,7 +19,8 @@ class _FeaturedScreenState extends State<FeaturedScreen> {
       child: Scaffold(
         body: Column(
           children: [
-            AppBar(),
+            AppBarWidget(),
+            HomeBodyWidget(),
           ],
         ),
       ),
@@ -26,68 +28,39 @@ class _FeaturedScreenState extends State<FeaturedScreen> {
   }
 }
 
-class AppBar extends StatelessWidget {
-  const AppBar({super.key});
+class HomeBodyWidget extends StatelessWidget {
+  const HomeBodyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
-      height: 250,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(25),
-          bottomRight: Radius.circular(25),
-        ),
-        color: kPurpleColor,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Row(
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Hello,\nMuhammad Hannan',
+                'Explore Courses',
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                      color: kGreyWhiteColor,
+                      color: kTextColor,
                       fontWeight: FontWeight.bold,
                     ),
               ),
-              Icon(
-                Icons.notifications,
-                color: kGreyWhiteColor,
+              MaterialButton(
+                onPressed: () {},
+                child: Text(
+                  'View More',
+                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        color: kTextColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
               ),
             ],
           ),
-          SizedBox(height: 20),
-          TextFormField(
-            decoration: InputDecoration(
-              fillColor: kGreyWhiteColor,
-              filled: true,
-              prefixIcon: Icon(Icons.search,
-              color: kPrimarySwatchColor.shade200
-              ),
-              suffixIcon: Icon(
-                Icons.mic,
-                color: kPurpleColor,
-              ),
-              floatingLabelBehavior: FloatingLabelBehavior.never,
-              hintText: 'Search for courses',
-              hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: kPrimarySwatchColor.shade200
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(50),
-                borderSide: BorderSide.none,
-              ),
-            ),
-          )
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

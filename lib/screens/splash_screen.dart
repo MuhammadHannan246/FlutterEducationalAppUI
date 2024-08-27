@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter_educational_app_ui/screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_educational_app_ui/theme/colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

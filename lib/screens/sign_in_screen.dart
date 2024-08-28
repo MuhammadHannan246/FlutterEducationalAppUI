@@ -91,7 +91,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                color: kTextColor,
+                                color: kPurpleColor,
                               ),
                             ),
                             child: TextFormField(
@@ -107,7 +107,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               controller: emailController,
                               keyboardType: TextInputType.emailAddress,
                               decoration: InputDecoration(
-                                fillColor: kSecondarySwatchColor.shade200,
+                                fillColor: kGreyWhiteColor,
                                 hintText: 'john@email.com',
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -118,20 +118,20 @@ class _SignInScreenState extends State<SignInScreen> {
                                     .textTheme
                                     .bodySmall!
                                     .copyWith(
-                                      color: kPrimarySwatchColor,
+                                      color: kPurpleColor,
                                     ),
                                 hintStyle: Theme.of(context)
                                     .textTheme
                                     .bodySmall!
                                     .copyWith(
-                                      color: kTextColor,
+                                      color: kLightGreyColor,
                                     ),
                               ),
                               style: Theme.of(context)
                                   .textTheme
                                   .bodySmall!
                                   .copyWith(
-                                    color: kBlackColor,
+                                    color: kTextColor,
                                   ),
                             ),
                           ),
@@ -142,7 +142,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 .textTheme
                                 .bodySmall!
                                 .copyWith(
-                                  color: kBlackColor,
+                                  color: kTextColor,
                                 ),
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
@@ -152,7 +152,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                color: kTextColor,
+                                color: kPurpleColor,
                               ),
                             ),
                             child: TextFormField(
@@ -167,7 +167,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               },
                               controller: passwordController,
                               decoration: InputDecoration(
-                                fillColor: kSecondarySwatchColor.shade200,
+                                fillColor: kGreyWhiteColor,
                                 hintText: '*******************',
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -178,20 +178,20 @@ class _SignInScreenState extends State<SignInScreen> {
                                     .textTheme
                                     .bodySmall!
                                     .copyWith(
-                                      color: kPrimarySwatchColor,
+                                      color: kPurpleColor,
                                     ),
                                 hintStyle: Theme.of(context)
                                     .textTheme
                                     .bodySmall!
                                     .copyWith(
-                                      color: kTextColor,
+                                      color: kLightGreyColor,
                                     ),
                               ),
                               style: Theme.of(context)
                                   .textTheme
                                   .bodySmall!
                                   .copyWith(
-                                    color: kBlackColor,
+                                    color: kTextColor,
                                   ),
                               obscureText: passwordObscure,
                               enableSuggestions: false,
@@ -202,7 +202,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           Row(
                             children: [
                               Checkbox(
-                                activeColor: kPrimarySwatchColor,
+                                activeColor: kPurpleColor,
                                 value: !passwordObscure,
                                 onChanged: (bool? value) {
                                   setState(
@@ -259,7 +259,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                     .textTheme
                                     .bodySmall!
                                     .copyWith(
-                                      color: kPrimarySwatchColor,
+                                      color: kPurpleColor,
                                       fontWeight: FontWeight.bold,
                                     ),
                               ),
@@ -300,7 +300,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                   .textTheme
                                   .bodySmall!
                                   .copyWith(
-                                    color: kPrimarySwatchColor,
+                                    color: kPurpleColor,
                                     fontWeight: FontWeight.bold,
                                   ),
                               textAlign: TextAlign.center,

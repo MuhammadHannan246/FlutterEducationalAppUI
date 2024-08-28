@@ -1,4 +1,5 @@
 
+import 'package:flutter_educational_app_ui/screens/course_screen.dart';
 import 'package:flutter_educational_app_ui/screens/featured_screen.dart';
 import 'package:flutter_educational_app_ui/screens/forgot_password_screen.dart';
 import 'package:flutter_educational_app_ui/screens/sign_in_screen.dart';
@@ -16,6 +17,7 @@ class PageRoutes {
       SignUpScreen.routeName: (context) => const SignUpScreen(),
       ForgotPasswordScreen.routeName: (context) => const ForgotPasswordScreen(),
       FeaturedScreen.routeName: (context) => const FeaturedScreen(),
+      CourseScreen.routeName: (context) => const CourseScreen(),
     };
   }
 }

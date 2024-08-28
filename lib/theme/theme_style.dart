@@ -11,8 +11,8 @@ class ThemeStyle {
     ),
     filledButtonTheme: FilledButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
-        foregroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
+        backgroundColor: MaterialStateProperty.all(kPurpleColor),
+        foregroundColor: MaterialStateProperty.all(kPurpleColor),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -28,41 +28,41 @@ class ThemeStyle {
     ),
     actionIconTheme: ActionIconThemeData(
       endDrawerButtonIconBuilder: (context) {
-        return Icon(Icons.menu, color: kPrimarySwatchColor);
+        return Icon(Icons.menu, color: kPurpleColor);
       },
     ),
     iconButtonTheme: IconButtonThemeData(
       style: ButtonStyle(
-          foregroundColor: MaterialStateProperty.all(kPrimarySwatchColor)),
+          foregroundColor: MaterialStateProperty.all(kPurpleColor)),
     ),
     menuButtonTheme: MenuButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
+        backgroundColor: MaterialStateProperty.all(kPurpleColor),
       ),
     ),
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
+        backgroundColor: MaterialStateProperty.all(kPurpleColor),
       ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kTextColor),
-        foregroundColor: MaterialStateProperty.all(kTextColor),
+        backgroundColor: MaterialStateProperty.all(kPurpleColor),
+        foregroundColor: MaterialStateProperty.all(kPurpleColor),
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
-        foregroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
+        backgroundColor: MaterialStateProperty.all(kPurpleColor),
+        foregroundColor: MaterialStateProperty.all(kPurpleColor),
         side: MaterialStateProperty.all<BorderSide>(
-          BorderSide(color: kPrimarySwatchColor),
+          BorderSide(color: kPurpleColor),
         ),
       ),
     ),
     segmentedButtonTheme: SegmentedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
+        backgroundColor: MaterialStateProperty.all(kPurpleColor),
       ),
     ),
     datePickerTheme: DatePickerThemeData(

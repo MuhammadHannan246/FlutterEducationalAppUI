@@ -116,6 +116,8 @@ class HomeBodyWidget extends StatelessWidget {
               child: GridView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 itemCount: courses.length,
+                physics: const BouncingScrollPhysics(),
+                shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 10.0,

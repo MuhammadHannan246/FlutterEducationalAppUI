@@ -34,44 +34,24 @@ class HomeBodyWidget extends StatelessWidget {
 
   final List<Map<String, String>> courses = const [
     {
-      'courseImage': 'assets/images/flutter.jpg',
-      'courseTitle': 'Flutter Development',
-      'courseDescription': 'Learn Flutter Development',
+      'courseCategoryImage': 'assets/images/web-development.png',
+      'courseCategoryTitle': 'Development',
+      'numberOfCourses': '55+ Courses',
     },
     {
-      'courseImage': 'assets/images/react.jpg',
-      'courseTitle': 'React Development',
-      'courseDescription': 'Learn React Development',
+      'courseCategoryImage': 'assets/images/economics.png',
+      'courseCategoryTitle': 'Accounting',
+      'numberOfCourses': '5+ Courses',
     },
     {
-      'courseImage': 'assets/images/ui-ux.jpg',
-      'courseTitle': 'UI/UX Development',
-      'courseDescription': 'Learn UI/UX Development',
+      'courseCategoryImage': 'assets/images/seo.png',
+      'courseCategoryTitle': 'Social Media Marketing',
+      'numberOfCourses': '20+ Courses',
     },
     {
-      'courseImage': 'assets/images/ai.jpg',
-      'courseTitle': 'AI Development Bootcamp',
-      'courseDescription': 'Learn AI Development with Python',
-    },
-    {
-      'courseImage': 'assets/images/flutter.jpg',
-      'courseTitle': 'Flutter Development',
-      'courseDescription': 'Learn Flutter Development',
-    },
-    {
-      'courseImage': 'assets/images/react.jpg',
-      'courseTitle': 'React Development',
-      'courseDescription': 'Learn React Development',
-    },
-    {
-      'courseImage': 'assets/images/ui-ux.jpg',
-      'courseTitle': 'UI/UX Development',
-      'courseDescription': 'Learn UI/UX Development',
-    },
-    {
-      'courseImage': 'assets/images/ai.jpg',
-      'courseTitle': 'AI Development Bootcamp',
-      'courseDescription': 'Learn AI Development with Python',
+      'courseCategoryImage': 'assets/images/content-strategy.png',
+      'courseCategoryTitle': 'Digital Marketing',
+      'numberOfCourses': '10+ Courses',
     },
   ];
 
@@ -122,14 +102,14 @@ class HomeBodyWidget extends StatelessWidget {
                   crossAxisCount: 2,
                   mainAxisSpacing: 10.0,
                   crossAxisSpacing: 10.0,
-                  childAspectRatio: 0.9,
+                  childAspectRatio: 0.7,
                 ),
                 itemBuilder: (context, index) {
                   final course = courses[index];
                   return CourseCardWidget(
-                    courseImage: course['courseImage']!,
-                    courseTitle: course['courseTitle']!,
-                    courseDescription: course['courseDescription']!,
+                    courseCategoryImage: course['courseCategoryImage']!,
+                    courseCategoryTitle: course['courseCategoryTitle']!,
+                    numberOfCourses: course['numberOfCourses']!,
                   );
                 },
               ),

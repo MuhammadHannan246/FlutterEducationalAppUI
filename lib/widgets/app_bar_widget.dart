@@ -31,6 +31,8 @@ class AppBarWidget extends StatelessWidget {
                       color: kGreyWhiteColor,
                       fontWeight: FontWeight.bold,
                     ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
               ),
               Icon(
                 Icons.notifications,
@@ -43,18 +45,18 @@ class AppBarWidget extends StatelessWidget {
             decoration: InputDecoration(
               fillColor: kGreyWhiteColor,
               filled: true,
-              prefixIcon: Icon(Icons.search,
-              color: kPrimarySwatchColor.shade200
-              ),
+              prefixIcon:
+                  Icon(Icons.search, color: kPrimarySwatchColor.shade200),
               suffixIcon: Icon(
                 Icons.mic,
                 color: kPurpleColor,
               ),
               floatingLabelBehavior: FloatingLabelBehavior.never,
               hintText: 'Search courses ...',
-              hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: kPrimarySwatchColor.shade200
-              ),
+              hintStyle: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(color: kPrimarySwatchColor.shade200),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(50),
                 borderSide: BorderSide.none,
